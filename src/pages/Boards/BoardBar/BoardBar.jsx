@@ -38,7 +38,6 @@ function BoardBar() {
             gap: 2,
             paddingX: 2,
             overflowX: 'auto',
-            borderBottom: '1px solid white',
             bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#070F2B' : '#a7a5f2')
         }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -101,7 +100,12 @@ function BoardBar() {
                             width: 30,
                             height: 30,
                             fontSize: 16,
-                            borderWidth: '0.5px'
+                            border: 'none',
+                            color: 'white',
+                            cursor: 'pointer',
+                            '&:first-of-type': {
+                                bgcolor: '#a4b0de'
+                            }
                         }
                     }}
                 >
