@@ -4,13 +4,13 @@ import Avatar from '@mui/material/Avatar'
 import AvatarGroup from '@mui/material/AvatarGroup'
 import Tooltip from '@mui/material/Tooltip'
 import Button from '@mui/material/Button'
-
 import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard'
 import VpnLockIcon from '@mui/icons-material/VpnLock'
 import AddToDriveIcon from '@mui/icons-material/AddToDrive'
 import BoltIcon from '@mui/icons-material/Bolt'
 import FilterAltIcon from '@mui/icons-material/FilterAlt'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
+import { capitalizeFirstLetter } from '~/utils/formatters'
 
 
 const MENU_STYLES = {
@@ -27,7 +27,9 @@ const MENU_STYLES = {
     }
 }
 
-function BoardBar() {
+function BoardBar({ board }) {
+    // const { board } = props
+    // const board = props.board
     return (
         <Box sx={{
             width: '100%',
@@ -44,14 +46,14 @@ function BoardBar() {
                 <Chip
                     sx={MENU_STYLES}
                     icon={<SpaceDashboardIcon />}
-                    label="DacLong"
+                    label={board?.title}
                     clickable
                 />
 
                 <Chip
                     sx={MENU_STYLES}
                     icon={<VpnLockIcon />}
-                    label="Public/Private Workspace"
+                    label={capitalizeFirstLetter(board?.type)}
                     clickable
                 />
 
